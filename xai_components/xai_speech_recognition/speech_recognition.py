@@ -226,26 +226,25 @@ class PlotSpectrogram(Component):
 @xai_component
 class SplitData(Component):
     spectrogram_data: InArg[any]
-    
-    train_dataset: OutArg[any]
-    val_dataset: OutArg[any]
+    train_size: InArg[float]
     
     def __init__(self):
         self.done = False
         self.spectrogram_data = InArg(None)
-        
-        self.train_dataset = OutArg(None)
-        self.val_dataset = OutArg(None)
+        self.train_size = InArg(None)
         
     def execute(self, ctx):
         import numpy as np
         import tensorflow as tf
         spectrogram = self.spectrogram_data.value
         DATASET_SIZE = ctx['dataset_size']
-
-        train_size = int(0.8 * DATASET_SIZE)
-        val_size = int(0.1 * DATASET_SIZE)
-        test_size = int(0.1 * DATASET_SIZE)
+        
+        train_percentage = self.train_size.value
+        val_percentage = (1 - train_percentage)/2
+        
+        train_size = int(train_percentage * DATASET_SIZE)
+        val_size = int(val_percentage * DATASET_SIZE)
+        test_size = int(val_percentage * DATASET_SIZE)
 
         train_dataset = spectrogram.take(train_size)
         test_files = spectrogram.skip(train_size)
@@ -256,36 +255,9 @@ class SplitData(Component):
         print('Validation set size', len(val_dataset))
         print('Test set size', len(test_dataset))
         
-        self.train_dataset.value = train_dataset
-        self.val_dataset.value = val_dataset
-        ctx.update({'test_dataset':test_dataset})
-        
-        self.done = True
-        
-#------------------------------------------------------------------------------
-#                    Xircuits Component : BatchData
-#------------------------------------------------------------------------------
-@xai_component
-class BatchData(Component):
-    train_dataset: InArg[any]
-    val_dataset: InArg[any]
-    
-    def __init__(self):
-        self.done = False
-        self.train_dataset = InArg(None)
-        self.val_dataset = InArg(None)
-        
-        self.train_dataset = OutArg(None)
-        self.val_dataset = OutArg(None)
-        
-    def execute(self, ctx):
-        import tensorflow as tf
-        train_dataset = self.train_dataset.value
-        val_dataset = self.val_dataset.value
-        
         batch_size = 64
         AUTOTUNE = tf.data.AUTOTUNE
-
+        
         train_dataset = train_dataset.batch(batch_size)
         val_dataset = val_dataset.batch(batch_size)
 
@@ -293,6 +265,11 @@ class BatchData(Component):
         val_dataset = val_dataset.cache().prefetch(AUTOTUNE)
         
         ctx.update({'train_dataset':train_dataset, 'val_dataset':val_dataset})
+        
+        # self.train_dataset.value = train_dataset
+        # self.val_dataset.value = val_dataset
+        ctx.update({'test_dataset':test_dataset})
+        
         self.done = True
         
 #------------------------------------------------------------------------------
