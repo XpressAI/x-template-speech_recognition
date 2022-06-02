@@ -2,3 +2,4 @@ xircuits
 tensorflow
 matplotlib
 seaborn
+tf2onnx
