@@ -56,7 +56,7 @@ xircuits
 
 ![Template](images/speech_recognition.gif)
 
-## Inference.xircuits
+#### Inference.xircuits
 
 - Predicts the speech from an audio file and outputs the probability of the prediction. 
 
