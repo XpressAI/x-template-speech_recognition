@@ -24,6 +24,11 @@ It consists of the components listed below:
   - `SaveSpeechModel` : save model in keras or tensorflow format.
   - `ConvertSpeechTFModelToOnnx` : convert TF model to onnx model to be used in other platforms.
   
+- Inference components: To predict the text of the speech from an audio file.
+    - `LoadModel` : Load the trained Tensorflow model.
+    - `LoadAudioFile` : Load an audio file and preprocess for prediction.
+    - `PredictSpeech` : Predict the text.
+  
 ## Prerequisites
 
 You will need Python 3.9+.
