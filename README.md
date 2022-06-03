@@ -51,9 +51,13 @@ xircuits
 
 ![Template](images/speech_recognition.gif)
 
+## Inference.xircuits
+
+- Predicts the speech from an audio file and outputs the probability of the prediction. 
+
+![Template](images/speech_recognition_inference.gif)
 
 ## Future work
 
-1. Perform inference using the trained model.
-2. Perform inference using [Silero models](https://github.com/snakers4/silero-models).
-3. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
+1. Perform inference using [Silero models](https://github.com/snakers4/silero-models).
+2. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
