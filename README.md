@@ -1,4 +1,4 @@
-# Xircuits Project Template
+# Xircuits Speech Recognition Project Template
 
 This template allows you to train a Tensorflow speech recognition model, using a mini version of the [speech_commands dataset](https://www.tensorflow.org/datasets/catalog/speech_commands).
 
