@@ -30,7 +30,7 @@ It consists of the components listed below:
     - `PredictSpeech` : Predict the text.
 
 - Silero inference components: To predict the text of the speech using pretrained Silero models.
-    - `SileroInference` : Predict the text of audio file using Silero model.
+    - `SileroModelInference` : Predict the text of audio file using Silero model.
   
 ## Prerequisites
 
