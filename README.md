@@ -28,6 +28,9 @@ It consists of the components listed below:
     - `LoadModel` : Load the trained Tensorflow model.
     - `LoadAudioFile` : Load an audio file and preprocess for prediction.
     - `PredictSpeech` : Predict the text.
+
+- Silero inference components: To predict the text of the speech using pretrained Silero models.
+    - `SileroInference` : Predict the text of audio file using Silero model.
   
 ## Prerequisites
 
@@ -62,7 +65,12 @@ xircuits
 
 ![Template](images/speech_recognition_inference.gif)
 
+#### SileroInference.xircuits
+
+- Predicts the speech from an audio file and outputs the text prediction. 
+
+![Template](images/silero_inference.jpg)
+
 ## Future work
 
-1. Perform inference using [Silero models](https://github.com/snakers4/silero-models).
-2. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
+1. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
