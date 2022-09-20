@@ -3,3 +3,7 @@ tensorflow
 matplotlib
 seaborn
 tf2onnx
+torch
+torchaudio
+PySoundFile
+omegaconf
