@@ -5,12 +5,12 @@ from xai_components.base import InArg, OutArg, InCompArg, Component, xai_compone
 #------------------------------------------------------------------------------
 @xai_component
 class SileroModelInference(Component):
-    audio_file: InArg[str]
+    audio_file: InCompArg[str]
     language: InArg[str]
         
     def __init__(self):
         self.done = False
-        self.audio_file = InArg(None)
+        self.audio_file = InCompArg(None)
         self.language = InArg(None)
                 
     def execute(self, ctx):
@@ -23,7 +23,7 @@ class SileroModelInference(Component):
         audio_file = self.audio_file.value
         dst = os.path.basename(audio_file)
         
-        lang = self.language.value
+        lang = self.language.value if self.language.value else 'en'
         
         device = torch.device('cpu')  
         model, decoder, utils = torch.hub.load(repo_or_dir='snakers4/silero-models',
