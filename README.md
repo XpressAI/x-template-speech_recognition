@@ -29,7 +29,7 @@ It consists of the components listed below:
     - `LoadAudioFile` : Load an audio file and preprocess for prediction.
     - `PredictSpeech` : Predict the text.
 
-- Silero inference components: To predict the text of the speech using pretrained Silero models.
+- Silero inference components: To predict the text of the speech using pretrained [Silero models](https://github.com/snakers4/silero-models).
     - `SileroModelInference` : Predict the text of audio file using Silero model.
   
 ## Prerequisites
