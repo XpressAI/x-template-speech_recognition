@@ -57,19 +57,19 @@ xircuits
 
 - In this template, we used the perform a simple speech recognition. You can further fine tune the model by modifying the hyperparameters.
 
-![Template](images/speech_recognition.gif)
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/speech_recognition.gif)
 
 #### Inference.xircuits
 
 - Predicts the speech from an audio file and outputs the probability of the prediction. 
 
-![Template](images/speech_recognition_inference.gif)
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/speech_recognition_inference.gif)
 
 #### SileroInference.xircuits
 
 - Predicts the speech from an audio file and outputs the text prediction. 
 
-![Template](images/silero_inference.jpg)
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/silero_inference.jpg)
 
 ## Future work
 
