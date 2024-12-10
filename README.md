@@ -32,6 +32,10 @@ It consists of the components listed below:
 - Silero inference components: To predict the text of the speech using pretrained [Silero models](https://github.com/snakers4/silero-models).
     - `SileroModelInference` : Predict the text of audio file using Silero model.
   
+
+- Silero inference components: To predict the text of the speech using pretrained [Silero models](https://github.com/snakers4/silero-models).
+    - `SileroModelInference` : Predict the text of audio file using Silero model.
+  
 ## Prerequisites
 
 You will need Python 3.9+.
@@ -58,6 +62,7 @@ xircuits
 - In this template, we used the perform a simple speech recognition. You can further fine tune the model by modifying the hyperparameters.
 
 ![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/speech_recognition.gif)
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/speech_recognition.gif)
 
 #### Inference.xircuits
 
@@ -70,7 +75,16 @@ xircuits
 - Predicts the speech from an audio file and outputs the text prediction. 
 
 ![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/silero_inference.jpg)
+- This example didn't work on python3.11
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/speech_recognition_inference.gif)
+
+#### SileroInference.xircuits
+
+- Predicts the speech from an audio file and outputs the text prediction. 
+
+![Template](https://github.com/XpressAI/x-template-speech_recognition/raw/main/images/silero_inference.jpg)
 
 ## Future work
 
+1. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
 1. Train model on [complex speech dataset](https://www.tensorflow.org/datasets/catalog/librispeech).
